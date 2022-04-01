@@ -21,7 +21,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myAgent.destination = Player.transform.position;
+        myAgent.dist = Player.transform.position;
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
         //анимация атаки
