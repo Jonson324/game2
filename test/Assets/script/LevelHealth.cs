@@ -5,19 +5,33 @@ using UnityEngine.UI;
 
 public class LevelHealth : MonoBehaviour
 {
-    public int levelHealth = 100; //хп
-    public Slider mySlider;//название слайдеру
-    public Image myImage;//название картинке
+    public GameObject Player;
+    public GameObject DeadPlayer;
+    public float levelHealth = 100;
+    public Slider mySlider;
+    public Image myImage;
+    
 
-    // Start is called before the first frame update
+    private bool isOnDeadZone = false;
+
+   
     void Start()
     {
+        Player = gameObject;
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        {
+            if (levelHealth <= 0) // если хп меньше или равно 0 инстанциируем модель трупа и удаляем объект Plazer
+            {
+                Instantiate(DeadPlayer, Player.transform.position, Player.transform.rotation);
+                Destroy(Player);
+            }
+        }
+
         mySlider.value = levelHealth;// присваиваем слайдеру значение хп
         if (levelHealth < 10)
         {
@@ -26,6 +40,31 @@ public class LevelHealth : MonoBehaviour
         else
         {
             myImage.enabled = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "deadzone")
+        {
+            isOnDeadZone = true;
+            levelHealth = levelHealth - 1 * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "deadzone")
+        {
+            levelHealth = levelHealth - 1 * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "deadzone")
+        {
+            isOnDeadZone = false;
         }
     }
 }
