@@ -15,21 +15,23 @@ public class enemy_hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "fireboll")
+        if (collision.gameObject.tag == "fireboll")
         {
-            Health = Health - 50;
+            Health -= 50;
             Debug.Log(Health);
             if (Health <= 0)
             {
                 Destroy(gameObject);
             }
+            
         }
+        
     }
 
-   
 }
