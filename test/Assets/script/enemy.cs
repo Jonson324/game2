@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[RequireComponent(typeof(NavMeshAgent))] //Авоматически добавляет параметр navmeshagent в объект при добавлении скрипта
+[RequireComponent(typeof(NavMeshAgent))] //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ navmeshagent пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 public class enemy : MonoBehaviour
 {
     public Transform Player;
@@ -24,7 +24,7 @@ public class enemy : MonoBehaviour
         
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        //анимация атаки
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         /*
                 if (Vector3.Distance(Player.transform.position, transform.position) <= 1.4f)
                 {

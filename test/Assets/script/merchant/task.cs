@@ -7,6 +7,7 @@ public class task : MonoBehaviour
     public bool EndDialog;
     public GameObject dialog1;
     public GameObject LevelHealth;
+    public quest_event qe;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class task : MonoBehaviour
             Time.timeScale = 1;
             dialog1.SetActive(false);
             LevelHealth.SetActive(true);
+            qe.quest_ring = true;
         }
     }
     void OnTriggerEnter (Collider col) {
