@@ -33,7 +33,7 @@ public class LevelHealth : MonoBehaviour
         }
 
         mySlider.value = levelHealth;// присваиваем слайдеру значение хп
-        if (levelHealth < 10)
+        if (levelHealth < 1)
         {
             myImage.enabled = false;
         }

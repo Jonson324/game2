@@ -180,7 +180,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 6331182182197487962}
   - {fileID: 3730051885182018447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -282,7 +281,7 @@ RectTransform:
   - {fileID: 2634334529790803824}
   - {fileID: 7104178987267800445}
   m_Father: {fileID: 6789447608562915709}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -340,6 +339,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
 --- !u!1 &8293027542051600262
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +415,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> staff
 --- !u!1 &9070803030064928367
 GameObject:
   m_ObjectHideFlags: 0
