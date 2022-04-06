@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 8961636174780774958}
   - component: {fileID: 3076128116766511624}
   - component: {fileID: 7935927657087605640}
+<<<<<<< HEAD:test/Assets/prefab/bullet 1.prefab
+>>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
+=======
 >>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
   m_Layer: 7
   m_Name: bullet 1
@@ -122,6 +125,7 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 <<<<<<< HEAD:test/Assets/prefab/bullet 1.prefab
+<<<<<<< HEAD:test/Assets/prefab/bullet 1.prefab
 --- !u!114 &1463758369383795485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,5 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9056164009498847ba6cb5331a2c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
 =======
 >>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
