@@ -18,7 +18,8 @@ public class task : MonoBehaviour
     {
         if (EndDialog == true) {
             Time.timeScale = 1;
-            dialog1.SetActive(false); 
+            dialog1.SetActive(false);
+            LevelHealth.SetActive(true);
         }
     }
     void OnTriggerEnter (Collider col) {
