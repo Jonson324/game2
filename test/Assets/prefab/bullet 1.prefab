@@ -8,12 +8,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:test/Assets/prefab/bullet 1.prefab
   - component: {fileID: 6216047073496722612}
   - component: {fileID: 1188282211794212151}
   - component: {fileID: 9100898357434655975}
   - component: {fileID: 2222515822283643357}
   - component: {fileID: 8621539528505834890}
   - component: {fileID: 1463758369383795485}
+=======
+  - component: {fileID: 3433148806289257025}
+  - component: {fileID: 3456556608371794294}
+  - component: {fileID: 8961636174780774958}
+  - component: {fileID: 3076128116766511624}
+  - component: {fileID: 7935927657087605640}
+>>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
   m_Layer: 7
   m_Name: bullet 1
   m_TagString: fireboll
@@ -92,7 +100,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347297035215647756}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -113,6 +121,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD:test/Assets/prefab/bullet 1.prefab
 --- !u!114 &1463758369383795485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9056164009498847ba6cb5331a2c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 704668b (нанесение урона):test/Assets/prefab/bullet.prefab
