@@ -6,6 +6,7 @@ public class task : MonoBehaviour
 {
     public bool EndDialog;
     public GameObject dialog1;
+    public GameObject LevelHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class task : MonoBehaviour
     void OnTriggerEnter (Collider col) {
         if (col.tag == "Player") {
             Time.timeScale = 0; //pause
-            dialog1.SetActive(true); 
+            dialog1.SetActive(true);
+            LevelHealth.SetActive(false);
         }
     }
 }
