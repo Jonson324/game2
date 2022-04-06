@@ -9,6 +9,7 @@ TagManager:
   - stick
   - sword
   - deadzone
+  - fireboll
   layers:
   - Default
   - TransparentFX

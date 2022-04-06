@@ -15,14 +15,5 @@ public class Damage : MonoBehaviour
     {
         
     }
-
-
-
-    private void OnTriggerEnter(Collider myCollider)
-    {
-        if (myCollider.tag == ("Player"))
-        {
-            myCollider.GetComponent<LevelHealth>().levelHealth -= 10;
-        }   
-    }
+    
 }
