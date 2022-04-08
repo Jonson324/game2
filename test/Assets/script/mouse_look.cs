@@ -10,7 +10,7 @@ public class mouse_look : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; //курсор только в пределе игры
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
