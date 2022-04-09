@@ -10,7 +10,6 @@ TagManager:
   - sword
   - deadzone
   - fireboll
-  - NPC
   layers:
   - Default
   - TransparentFX
