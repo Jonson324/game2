@@ -9,7 +9,7 @@ public class task : MonoBehaviour
     public GameObject dialog1_end;
     public GameObject LevelHealth;
     public quest_event qe;
-    public GameObject end_text;
+    public GameObject Hint;
     public bool fin_dialog;
 
     // Start is called before the first frame update
@@ -38,6 +38,14 @@ public class task : MonoBehaviour
     }
     void OnTriggerEnter (Collider col) {
         if (col.tag == "Player") {
+            if (qe.quest_ring == false) {
+                Hint.SetActive(true);
+            }
+        }
+    }
+    void OnTriggerStay (Collider col) {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            Hint.SetActive(false);
             if (fin_dialog == false) {
                 Time.timeScale = 0; //pause
                 if (qe.quest_ring_end == false) {
