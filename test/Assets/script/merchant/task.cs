@@ -9,6 +9,7 @@ public class task : MonoBehaviour
     public GameObject dialog1_end;
     public GameObject LevelHealth;
     public quest_event qe;
+    public GameObject end_text;
     public bool fin_dialog;
 
     // Start is called before the first frame update
@@ -20,6 +21,9 @@ public class task : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (qe.quest_ring_end == true) {
+            fin_dialog = true;
+        }
         if (EndDialog == true) {
             Time.timeScale = 1;
             dialog1.SetActive(false);
@@ -34,10 +38,14 @@ public class task : MonoBehaviour
     }
     void OnTriggerEnter (Collider col) {
         if (col.tag == "Player") {
-            Time.timeScale = 0; //pause
-            if (qe.quest_ring_end == false) {
-                dialog1.SetActive(true);
-                LevelHealth.SetActive(false);
+            if (fin_dialog == false) {
+                Time.timeScale = 0; //pause
+                if (qe.quest_ring_end == false) {
+                    dialog1.SetActive(true);
+                    LevelHealth.SetActive(false);
+                } else {
+                    dialog1_end.SetActive(true);
+                }
             } else {
                 dialog1_end.SetActive(true);
             }

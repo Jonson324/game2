@@ -6,8 +6,10 @@ public class dialog_next : MonoBehaviour
 {
     public GameObject Text1;
     public GameObject Text2;
+	public GameObject Ring;
     private bool isText = true;
     public task npc_taskScript;
+    public quest_event qe;
 	public bool fin_dialog;
 		
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class dialog_next : MonoBehaviour
 				} else {
 					if (fin_dialog == false) {
 						isText = true;
+						Ring.SetActive(true);
 						npc_taskScript.EndDialog = true;
 					} else {
 						isText = true;
