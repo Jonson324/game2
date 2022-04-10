@@ -50,6 +50,10 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = true;
             levelHealth = levelHealth - 3 * Time.deltaTime;
         }
+        if (other.tag == "sword")
+        {
+            levelHealth = levelHealth - 25;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -67,4 +71,5 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = false;
         }
     }
+   
 }
