@@ -10,7 +10,10 @@ public class task : MonoBehaviour
     public GameObject LevelHealth;
     public quest_event qe;
     public GameObject Hint;
+    public GameObject shop;
     public bool fin_dialog;
+    public bool dialog1_end_disable;
+    public bool shop_enable;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +58,21 @@ public class task : MonoBehaviour
                     dialog1_end.SetActive(true);
                 }
             } else {
-                dialog1_end.SetActive(true);
+                if (dialog1_end_disable == false) {
+                    dialog1_end.SetActive(true);
+                    dialog1_end_disable = true;
+                }
+                if (shop_enable == true) {
+                    shop.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                shop_enable = true;
             }
         }
+    }
+
+    void OnTriggerExit (Collider col) {
+        Hint.SetActive(false);
     }
 }
