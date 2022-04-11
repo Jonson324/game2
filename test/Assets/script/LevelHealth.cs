@@ -51,7 +51,7 @@ public class LevelHealth : MonoBehaviour
         if (other.tag == "deadzone")
         {
             isOnDeadZone = true;
-            levelHealth = levelHealth - 3 * Time.deltaTime;
+            levelHealth = levelHealth - 5 * Time.deltaTime;
         }
     }
 
@@ -59,7 +59,7 @@ public class LevelHealth : MonoBehaviour
     {
         if (other.tag == "deadzone")
         {
-            levelHealth = levelHealth - 3 * Time.deltaTime;
+            levelHealth = levelHealth - 5 * Time.deltaTime;
         }
     }
 
