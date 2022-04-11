@@ -10,6 +10,7 @@ public class LevelHealth : MonoBehaviour
     public float levelHealth = 100;
     public Slider mySlider;
     public Image myImage;
+    public Text txt;
     
 
     private bool isOnDeadZone = false;
@@ -24,6 +25,8 @@ public class LevelHealth : MonoBehaviour
 
     void Update()
     {
+        txt.text = "+" + Mathf.Floor(levelHealth);
+
         {
             if (levelHealth <= 0) // если хп меньше или равно 0 инстанциируем модель трупа и удаляем объект Plazer
             {
@@ -32,7 +35,7 @@ public class LevelHealth : MonoBehaviour
             }
         }
 
-        mySlider.value = levelHealth;// присваиваем слайдеру значение хп
+       /* mySlider.value = levelHealth;// присваиваем слайдеру значение хп
         if (levelHealth < 1)
         {
             myImage.enabled = false;
@@ -40,7 +43,7 @@ public class LevelHealth : MonoBehaviour
         else
         {
             myImage.enabled = true;
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
