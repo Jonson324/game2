@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class LevelHealth : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject DeadPlayer;
+    public GameObject DeadCamera;
+    public GameObject Parent;
+    public GameObject PanelDead;
     public float levelHealth = 100;
-    public Slider mySlider;
-    public Image myImage;
+  //  public Slider mySlider;
+  //  public Image myImage;
     public Text txt;
     
 
@@ -19,7 +21,6 @@ public class LevelHealth : MonoBehaviour
     void Start()
     {
         Player = gameObject;
-        
     }
 
 
@@ -27,12 +28,14 @@ public class LevelHealth : MonoBehaviour
     {
         txt.text = "+" + Mathf.Floor(levelHealth);
 
+        if (levelHealth <= 0)
         {
-            if (levelHealth <= 0) // если хп меньше или равно 0 инстанциируем модель трупа и удаляем объект Plazer
-            {
-                Instantiate(DeadPlayer, Player.transform.position, Player.transform.rotation);
-                Destroy(Player);
-            }
+            PanelDead.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            DeadCamera.SetActive(true);
+            DeadCamera.transform.parent = Parent.transform;
+            Destroy(gameObject);
         }
 
        /* mySlider.value = levelHealth;// присваиваем слайдеру значение хп
