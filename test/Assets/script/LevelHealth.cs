@@ -13,6 +13,7 @@ public class LevelHealth : MonoBehaviour
   //  public Slider mySlider;
   //  public Image myImage;
     public Text txt;
+    public float maxhealth = 100;
     
 
     private bool isOnDeadZone = false;
@@ -26,6 +27,11 @@ public class LevelHealth : MonoBehaviour
 
     void Update()
     {
+        if(levelHealth > maxhealth)
+        {
+            levelHealth = maxhealth;
+        }
+
         txt.text = "+" + Mathf.Floor(levelHealth);
 
         if (levelHealth <= 0)
@@ -56,6 +62,12 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = true;
             levelHealth = levelHealth - 5 * Time.deltaTime;
         }
+
+        if (other.tag == "Health")
+        {
+            levelHealth += 20;
+            Destroy(GameObject.FindGameObjectWithTag("Health"));
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -73,4 +85,9 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = false;
         }
     }
+
+
+    
+
+
 }
