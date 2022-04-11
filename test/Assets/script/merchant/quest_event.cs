@@ -7,11 +7,6 @@ public class quest_event : MonoBehaviour
     public bool quest_ring;
     public GameObject Current_Task;
     public bool quest_ring_end;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

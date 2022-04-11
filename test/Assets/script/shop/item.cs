@@ -10,7 +10,7 @@ public class item : MonoBehaviour
     public int priceItem;
     public Text textItem;
      
-    public void buyItem () { 
+    public void buyItem () {
         scriptShop.nameItem = nameItem;
         scriptShop.priceItem = priceItem;
 

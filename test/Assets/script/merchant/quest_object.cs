@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class quest_object : MonoBehaviour
 {
-    public quest_event qe;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public quest_event quest_event;
+    public task taskScript;
     
     void OnTriggerEnter (Collider col) {
         if (col.tag == "Player") {
-            qe.quest_ring_end = true;
+            quest_event.quest_ring_end = true;
             Destroy(gameObject);
+            taskScript.ring_obtained = true;
+            taskScript.EndDialog = false;
         }
     }
 }

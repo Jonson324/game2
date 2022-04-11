@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shop : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class shop : MonoBehaviour
     public string nameItem;
     [HideInInspector]
     public int priceItem;
-
+    public GameObject Shop;
+    public Text monk;
     public GameObject[] allItem;
 
     public class DataPlayer {
@@ -25,7 +27,12 @@ public class shop : MonoBehaviour
         } else {
             dataPlayer.money = 2000;
             saveGame();
+            loadGame();
         }
+    }
+
+    private void Update() {
+        monk.text = "Деньги: " + dataPlayer.money;
     }
 
     private void saveGame() {
@@ -52,5 +59,11 @@ public class shop : MonoBehaviour
             saveGame();
             loadGame();
         }
+    }
+
+    public void closeShop() {
+        Shop.SetActive(false);
+        Time.timeScale = 1; //pause 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

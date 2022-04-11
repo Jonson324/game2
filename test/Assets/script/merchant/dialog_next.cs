@@ -6,41 +6,35 @@ public class dialog_next : MonoBehaviour
 {
     public GameObject Text1;
     public GameObject Text2;
+    public GameObject dialog1_end;
 	public GameObject Ring;
-    private bool isText = true;
-    public task npc_taskScript;
-    public quest_event qe;
-	public bool fin_dialog;
-		
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool next;
+    public task taskScript;
 
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(KeyCode.Mouse0)) {
-				if (isText == true) {
-					isText = false;
-				} else {
-					if (fin_dialog == false) {
-						isText = true;
-						Ring.SetActive(true);
-						npc_taskScript.EndDialog = true;
-					} else {
-						isText = true;
-						npc_taskScript.fin_dialog = true;
-					}
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+			if (next == false) {
+				next = true;
+				if (taskScript.ring_obtained == true) {
+					taskScript.fin_dialog = true;
+				}
+			} else {
+				next = false;
+				if (taskScript.ring_obtained == false) {
+					Ring.SetActive(true);
+					taskScript.EndDialog = true;
 				}
 			}
-		if (isText == true) {
+		}
+		
+		if (next == false) {
 			Text1.SetActive (true);
 			Text2.SetActive (false);
 		} else {
 			Text1.SetActive (false);
 			Text2.SetActive (true);
 		}
-  	}
+	}
 }
