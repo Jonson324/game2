@@ -48,11 +48,12 @@ public class LevelHealth : MonoBehaviour
         if (other.tag == "deadzone")
         {
             isOnDeadZone = true;
-            levelHealth = levelHealth - 3 * Time.deltaTime;
+            levelHealth = levelHealth - 25 * Time.deltaTime;
         }
+        //Нанесение урона скелетоми
         if (other.tag == "sword")
         {
-            levelHealth = levelHealth - 25;
+            levelHealth = levelHealth - 5;
         }
     }
 

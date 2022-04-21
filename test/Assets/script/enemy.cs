@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[RequireComponent(typeof(NavMeshAgent))] //Авоматически добавляет параметр navmeshagent в объект при добавлении скрипта
+[RequireComponent(typeof(NavMeshAgent))] //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ navmeshagent пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 public class enemy : MonoBehaviour
 {
     public Transform Player;
     NavMeshAgent myAgent;
     public float dist;
     private float dmg;
-    
+
 
     private void Start()
     {
@@ -21,10 +21,10 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        //анимация атаки
+        //РђРЅРёРјР°С†РёСЏ Р°С‚Р°РєРё
         /*
                 if (Vector3.Distance(Player.transform.position, transform.position) <= 1.4f)
                 {
@@ -36,24 +36,21 @@ public class enemy : MonoBehaviour
                     GetComponent<NavMeshAgent>().destination = Player.transform.position;
                 }
           */
-      //  if (dist < 1.5f)
+        //  if (dist < 1.5f)
         //{
-          //  myAgent.enabled = false;
-            //gameObject.GetComponent<Animator>().Play("attack");
+        //  myAgent.enabled = false;
+        //gameObject.GetComponent<Animator>().Play("attack");
         //}
-        
-        if(dist > 1.5f )
+
+        if (dist > 1.5f)
         {
             myAgent.enabled = true;
             myAgent.SetDestination(Player.transform.position);
             gameObject.GetComponent<Animator>().Play("rigAction_001");
         }
-        if (dist <1.5f)
+        if (dist < 1.5f)
         {
             myAgent.enabled = false;
         }
-
-
-       
     }
 }
