@@ -76,6 +76,7 @@ public class AgentLinkMover : MonoBehaviour
             agent.transform.position = Vector3.Lerp(startPos, endPos, normalizedTime) + yOffset * Vector3.up;
             normalizedTime += Time.deltaTime / duration;
             yield return null;
+            gameObject.GetComponent<Animator>().Play("jump");
         }
     } 
 }

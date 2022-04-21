@@ -10,6 +10,8 @@ TagManager:
   - sword
   - deadzone
   - fireboll
+  - Fire
+  - jump
   layers:
   - Default
   - TransparentFX

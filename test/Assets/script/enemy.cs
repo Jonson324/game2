@@ -39,18 +39,28 @@ public class enemy : MonoBehaviour
         //  if (dist < 1.5f)
         //{
         //  myAgent.enabled = false;
-        //gameObject.GetComponent<Animator>().Play("attack");
+        //gameObject.GetComponent<Animator>().Play("attack_s");
         //}
 
         if (dist > 1.5f)
         {
             myAgent.enabled = true;
             myAgent.SetDestination(Player.transform.position);
-            gameObject.GetComponent<Animator>().Play("rigAction_001");
+            gameObject.GetComponent<Animator>().Play("Walk");
         }
         if (dist < 1.5f)
         {
             myAgent.enabled = false;
+            gameObject.GetComponent<Animator>().Play("attack_s");
         }
+        
+    }
+     private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "jump")
+        {
+            gameObject.GetComponent<Animator>().Play("jump");
+        }
+       
     }
 }
