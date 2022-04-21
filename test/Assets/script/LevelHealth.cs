@@ -10,8 +10,6 @@ public class LevelHealth : MonoBehaviour
     public GameObject Parent;
     public GameObject PanelDead;
     public float levelHealth = 100;
-  //  public Slider mySlider;
-  //  public Image myImage;
     public Text txt;
     public float maxhealth = 100;
     
@@ -44,15 +42,6 @@ public class LevelHealth : MonoBehaviour
             Destroy(gameObject);
         }
 
-       /* mySlider.value = levelHealth;// присваиваем слайдеру значение хп
-        if (levelHealth < 1)
-        {
-            myImage.enabled = false;
-        }
-        else
-        {
-            myImage.enabled = true;
-        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,9 +74,4 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = false;
         }
     }
-
-
-    
-
-
 }

@@ -20,11 +20,6 @@ public class player_move : MonoBehaviour
 
     public float jumpHieght = 6f;
 
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
