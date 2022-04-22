@@ -29,7 +29,7 @@ public class fire_staff : MonoBehaviour
 
         if (this.GetComponent<fire_staff>().fire == true)
         {
-            fireboll.transform.position += transform.TransformDirection(Vector3.fwd) * (fbspeed * Time.deltaTime);
+            fireboll.transform.position += transform.TransformDirection(Vector3.forward) * (fbspeed * Time.deltaTime);
             
             if ((this.transform.position - fireboll.transform.position).sqrMagnitude > fbdist)
             {
