@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class dialog_next : MonoBehaviour
 {
-    public GameObject Text1;
-    public GameObject Text2;
-    public GameObject dialog1_end;
-	public GameObject Ring;
-    private bool next;
-    public task taskScript;
+    public GameObject Text1; //первая реплика
+    public GameObject Text2; //вторая реплика
+    public GameObject dialog1_end; //финальная реплика
+	public GameObject Ring; //объект задания
+    private bool next; //переключатель
+    public task taskScript; //ссылка на скрипт взаимодействия с npc
 
     // Update is called once per frame
     void Update()
@@ -18,13 +18,13 @@ public class dialog_next : MonoBehaviour
 			if (next == false) {
 				next = true;
 				if (taskScript.ring_obtained == true) {
-					taskScript.fin_dialog = true;
+					taskScript.EndDialog2 = true;
 				}
 			} else {
 				next = false;
 				if (taskScript.ring_obtained == false) {
 					Ring.SetActive(true);
-					taskScript.EndDialog = true;
+					taskScript.EndDialog1 = true;
 				}
 			}
 		}

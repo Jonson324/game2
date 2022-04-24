@@ -8,12 +8,12 @@ public class shop : MonoBehaviour
     private shop.DataPlayer dataPlayer = new shop.DataPlayer();
 
     [HideInInspector]
-    public string nameItem;
+    public string nameItem; //имя товара
     [HideInInspector]
-    public int priceItem;
-    public GameObject Shop;
-    public Text monk;
-    public GameObject[] allItem;
+    public int priceItem; //цена товара
+    public GameObject Shop; //магазин
+    public Text monk; //отображение денег
+    public GameObject[] allItem;  //массив товаров
 
     public class DataPlayer {
         public int money;

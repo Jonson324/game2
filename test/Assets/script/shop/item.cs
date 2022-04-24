@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class item : MonoBehaviour
 {
-    public shop scriptShop;
-    public string nameItem;
-    public int priceItem;
-    public Text textItem;
+    public shop scriptShop; //ссылка на скрипт магазина
+    public string nameItem; //имя товара
+    public int priceItem; //цена товара
+    public Text textItem; //ценник товара
      
     public void buyItem () {
         scriptShop.nameItem = nameItem;
