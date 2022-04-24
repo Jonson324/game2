@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class LevelHealth : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject DeadPlayer;
+    public GameObject DeadCamera;
+    public GameObject Parent;
+    public GameObject PanelDead;
     public float levelHealth = 100;
-    public Slider mySlider;
-    public Image myImage;
+    public Text txt;
+    public float maxhealth = 100;
     
 
     private bool isOnDeadZone = false;
@@ -18,29 +20,28 @@ public class LevelHealth : MonoBehaviour
     void Start()
     {
         Player = gameObject;
-        
     }
 
 
     void Update()
     {
+        if(levelHealth > maxhealth)
         {
-            if (levelHealth <= 0) // если хп меньше или равно 0 инстанциируем модель трупа и удаляем объект Plazer
-            {
-                Instantiate(DeadPlayer, Player.transform.position, Player.transform.rotation);
-                Destroy(Player);
-            }
+            levelHealth = maxhealth;
         }
 
-        mySlider.value = levelHealth;// присваиваем слайдеру значение хп
-        if (levelHealth < 1)
+        txt.text = "+" + Mathf.Floor(levelHealth);
+
+        if (levelHealth <= 0)
         {
-            myImage.enabled = false;
+            PanelDead.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            DeadCamera.SetActive(true);
+            DeadCamera.transform.parent = Parent.transform;
+            Destroy(gameObject);
         }
-        else
-        {
-            myImage.enabled = true;
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,12 +49,13 @@ public class LevelHealth : MonoBehaviour
         if (other.tag == "deadzone")
         {
             isOnDeadZone = true;
-            levelHealth = levelHealth - 25 * Time.deltaTime;
+            levelHealth = levelHealth - 5 * Time.deltaTime;
         }
-        //Нанесение урона скелетоми
-        if (other.tag == "sword")
+
+        if (other.tag == "Health")
         {
-            levelHealth = levelHealth - 5;
+            levelHealth += 20;
+            Destroy(GameObject.FindGameObjectWithTag("Health"));
         }
     }
 
@@ -61,7 +63,7 @@ public class LevelHealth : MonoBehaviour
     {
         if (other.tag == "deadzone")
         {
-            levelHealth = levelHealth - 3 * Time.deltaTime;
+            levelHealth = levelHealth - 5 * Time.deltaTime;
         }
     }
 
@@ -72,5 +74,4 @@ public class LevelHealth : MonoBehaviour
             isOnDeadZone = false;
         }
     }
-   
 }
