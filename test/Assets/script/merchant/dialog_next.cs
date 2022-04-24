@@ -4,40 +4,37 @@ using UnityEngine;
 
 public class dialog_next : MonoBehaviour
 {
-    public GameObject Text1;
-    public GameObject Text2;
-    private bool isText = true;
-    public task npc_taskScript;
-	public bool fin_dialog;
-		
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Text1; //первая реплика
+    public GameObject Text2; //вторая реплика
+    public GameObject dialog1_end; //финальная реплика
+	public GameObject Ring; //объект задания
+    private bool next; //переключатель
+    public task taskScript; //ссылка на скрипт взаимодействия с npc
 
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetMouseButtonDown (0)) {
-				if (isText == true) {
-					isText = false;
-				} else {
-					if (fin_dialog == false) {
-						isText = true;
-						npc_taskScript.EndDialog = true;
-					} else {
-						isText = true;
-						npc_taskScript.fin_dialog = true;
-					}
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+			if (next == false) {
+				next = true;
+				if (taskScript.ring_obtained == true) {
+					taskScript.EndDialog2 = true;
+				}
+			} else {
+				next = false;
+				if (taskScript.ring_obtained == false) {
+					Ring.SetActive(true);
+					taskScript.EndDialog1 = true;
 				}
 			}
-		if (isText == true) {
+		}
+		
+		if (next == false) {
 			Text1.SetActive (true);
 			Text2.SetActive (false);
 		} else {
 			Text1.SetActive (false);
 			Text2.SetActive (true);
 		}
-  	}
+	}
 }
